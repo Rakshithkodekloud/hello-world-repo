@@ -1,0 +1,12 @@
+name: Test Variable Priority
+
+on:
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  test-variable:
+    runs-on: ubuntu-latest
+    environment: test-env  # This will apply environment-level variables
+    steps:
+      - name: Print TEST_VAR value
+        run: echo "TEST_VAR = ${{ vars.TEST_VAR }}"
